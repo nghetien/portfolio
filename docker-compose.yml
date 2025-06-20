@@ -21,7 +21,7 @@ services:
       - "443:443"    # HTTPS (for future SSL)
     volumes:
       # Use HTTP config first, will switch to SSL later
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/ssl.conf:/etc/nginx/conf.d/default.conf
 
       # Webroot for Let's Encrypt challenges
       - ./certbot/www:/var/www/certbot:ro
