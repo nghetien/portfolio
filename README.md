@@ -62,3 +62,32 @@ docker-compose up -d --build
 # Check services đang chạy
 docker-compose ps
 ```
+
+### SSL
+
+```
+sudo apt install certbot python3-certbot-nginx -y
+
+sudo certbot certonly --webroot \
+  -w ./certbot/www \
+  -d tiennghe.com \
+  -d www.tiennghe.com \
+  --email nghequyettien@gmail.com \
+  --agree-tos \
+  --no-eff-email \
+  --non-interactive
+
+# Copy certificate files
+sudo cp /etc/letsencrypt/live/tiennghe.com/fullchain.pem ssl/certs/tiennghe.com.pem
+sudo cp /etc/letsencrypt/live/tiennghe.com/privkey.pem ssl/private/tiennghe.com-key.pem
+
+# Fix ownership và permissions
+sudo chown $(whoami):$(whoami) ssl/certs/tiennghe.com.pem
+sudo chown $(whoami):$(whoami) ssl/private/tiennghe.com-key.pem
+chmod 644 ssl/certs/tiennghe.com.pem
+chmod 600 ssl/private/tiennghe.com-key.pem
+
+# Verify files
+ls -la ssl/certs/ ssl/private/
+
+```
