@@ -109,7 +109,7 @@ function ProjectPreview({
           {description}
         </p>
         {tags.length > 0 && (
-          <TIL.ItemTags>
+          <TIL.ItemTags className={clsx('flex flex-wrap')}>
             {tags.map((tag) => (
               <TIL.ItemTag>{tag}</TIL.ItemTag>
             ))}

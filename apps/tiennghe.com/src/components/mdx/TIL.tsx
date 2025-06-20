@@ -74,8 +74,12 @@ export function DnD({ children = null }: PropsWithChildren) {
   );
 }
 
-export function ItemTags({ children = null }: PropsWithChildren) {
-  return <div className={clsx('-mt-1 mb-4 flex gap-2')}>{children}</div>;
+interface ItemTagsProps extends PropsWithChildren {
+  className?: string;
+}
+
+export function ItemTags({ children = null, className = '' }: ItemTagsProps) {
+  return <div className={clsx('-mt-1 mb-4 flex gap-2', className)}>{children}</div>;
 }
 
 export function ItemTag({ children = null }: PropsWithChildren) {
