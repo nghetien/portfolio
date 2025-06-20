@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: tien_nq
+      MONGO_INITDB_ROOT_PASSWORD: my_sicret
+      MONGO_INITDB_DATABASE: portfolio
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+
+volumes:
+  mongo_data:
+    driver: local
+  mongo_config:
+    driver: local
