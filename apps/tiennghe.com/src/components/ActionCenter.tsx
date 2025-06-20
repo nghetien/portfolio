@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { m } from 'framer-motion';
-import { useTheme } from 'next-themes';
+import useTheme from '@/hooks/useTheme';
 
 import { DarkIcon, EyeIcon, EyeSlash, LightIcon } from '@/components/Icons';
 
