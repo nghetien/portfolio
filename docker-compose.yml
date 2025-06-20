@@ -9,7 +9,6 @@ services:
       - "3000"
     environment:
       - NEXT_PUBLIC_VERCEL_ENV=production
-      - REACT_EDITOR=atom
     restart: unless-stopped
     networks:
       - app-network
