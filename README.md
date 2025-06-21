@@ -21,7 +21,7 @@ Now, your project should be up and running smoothly!
 ### Git Clone
 
 ```
-git clone https://nghetien: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@github.com/nghetien/portfolio
+git clone git@github.com:nghetien/portfolio.git
 ```
 
 
