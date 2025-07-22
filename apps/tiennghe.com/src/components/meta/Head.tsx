@@ -26,17 +26,23 @@ function Head({
   return (
     <NextHead>
       <title>{htmlTitle}</title>
-      <meta name="description" content={description} />
       <link rel="icon" href="/favicon.ico" />
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+      <meta name="image" content={ogImage} />
 
       {/* seo */}
       <link rel="canonical" href={currentUrl} />
 
       {/* og image */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={`Image with "${title}" text.`} />
+      <meta property="og:url" content={currentUrl} />
+      <meta property="og:type" content="website" />
 
       {/* twitter card */}
       <meta name="twitter:card" content="summary_large_image" />
